@@ -1,19 +1,15 @@
 package com.zombie.animation.game;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 public class SelectionScreen implements Screen {
 
     final Animator animator;
     OrthographicCamera camera;
-    RunningMan runningMan;
+    Zombie zombie;
 
     public SelectionScreen(final Animator animator) {
         this.animator = animator;
@@ -21,7 +17,7 @@ public class SelectionScreen implements Screen {
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 1200, 600);
 
-        runningMan = new RunningMan(this);
+        zombie = new Zombie(this);
     }
 
 
@@ -39,11 +35,11 @@ public class SelectionScreen implements Screen {
         animator.batch.setProjectionMatrix(camera.combined);
 
         animator.batch.begin();
-        animator.font.draw(animator.batch, "This is the running man animator", 500, 300);
+        animator.font.draw(animator.batch, "This is the walking zombie animator.", 450, 300);
         animator.batch.end();
 
         if (Gdx.input.isTouched()) {
-            runningMan.render();
+            zombie.render();
             dispose();
         }
 
