@@ -25,8 +25,6 @@ public class Cow {
     private Animation walkAnimation;
     private TextureRegion standAnimation;
 
-    private Sound moo;
-
     private float stateTime;
 
     public Cow(final CowGame game, int height, int width) {
@@ -39,8 +37,6 @@ public class Cow {
         flip = false;
 
         stateTime = 0f;
-
-        moo = Gdx.audio.newSound(Gdx.files.internal("sounds/moo.ogg"));
 
         TextureRegion[] walkFrames = new TextureRegion[8];
 
@@ -55,12 +51,11 @@ public class Cow {
             }
             count += 1;
         }
-        walkAnimation = new Animation<TextureRegion>(.3f, walkFrames);
+        walkAnimation = new Animation<TextureRegion>(.2f, walkFrames);
         standAnimation = new TextureRegion(new Texture(Gdx.files.internal("cow_stand.png")));
     }
 
     public void walk() {
-        game.batch.begin();
 
         stateTime += Gdx.graphics.getDeltaTime();
         // Get current frame of animation for the current stateTime
@@ -68,32 +63,37 @@ public class Cow {
         game.batch.draw(frame, flip ? posX + width : posX, posY, flip ? -width : width, height);
         // https://stackoverflow.com/questions/28000623/libgdx-flip-2d-sprite-animation/28000689#28000689
 
-        if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+        if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) || Gdx.input.isKeyPressed(Input.Keys.D)) {
             flip = false;
             posX += walkSpeed;
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+        if (Gdx.input.isKeyPressed(Input.Keys.LEFT) || Gdx.input.isKeyPressed(Input.Keys.A)) {
             flip = true;
             posX -= walkSpeed;
         }
+        if (Gdx.input.isKeyPressed(Input.Keys.UP) || Gdx.input.isKeyPressed(Input.Keys.W)) {
+            posY += walkSpeed;
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.DOWN) || Gdx.input.isKeyPressed(Input.Keys.S)) {
+            posY -= walkSpeed;
+        }
         if (posX >= Gdx.graphics.getWidth() - width) { posX = Gdx.graphics.getWidth() - width; }
         if (posX <= 0) { posX = 0; }
+        if (posY >= Gdx.graphics.getHeight() - height) { posY = Gdx.graphics.getHeight() - height; }
+        if (posY <= 0) { posY = 0; }
 
 
-        game.batch.end();
     }
 
     public void stand() {
-        game.batch.begin();
 
         stateTime += Gdx.graphics.getDeltaTime();
         game.batch.draw(standAnimation, flip ? posX + width : posX, posY, flip ? -width : width, height);
 
-        game.batch.end();
     }
 
     public void moo() {
-        moo.play();
+        game.moo.play();
     }
 
     public int getHeight() { return height; }

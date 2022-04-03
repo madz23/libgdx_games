@@ -10,6 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 public class WelcomeScreen implements Screen {
@@ -19,7 +20,6 @@ public class WelcomeScreen implements Screen {
     private Table table;
     private Skin skin;
 
-    private Sound moo;
     private TextButton play;
 
     public WelcomeScreen (final CowGame game) {
@@ -53,8 +53,6 @@ public class WelcomeScreen implements Screen {
         table.add(attribution).padTop(10);
 
 
-
-
     }
     @Override
     public void show() {
@@ -63,7 +61,7 @@ public class WelcomeScreen implements Screen {
 
     @Override
     public void render(float delta) {
-
+        game.menuTune.play();
         ScreenUtils.clear(new Color(1, 1, 1, 1));
 
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
@@ -72,8 +70,7 @@ public class WelcomeScreen implements Screen {
 
         if (play.isPressed()) {
 
-            Sound moo = Gdx.audio.newSound(Gdx.files.internal("sounds/moo.ogg"));
-            moo.play();
+            game.moo.play();
 
             game.setScreen(new Field(game));
             dispose();

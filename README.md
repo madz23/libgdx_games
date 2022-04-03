@@ -29,3 +29,6 @@ All the sounds come from https://freesound.org.
 
 4/2
 This is the only "game" worthy of note and the only project here that will likely evolve into a more developed and likely playable game. The animation for the cow was all done by me, but the libGDX skin and sounds are currently being pulled from free websites. More information to come as I actually work on this. As of now, the there is a main menu screen with a play button which takes you to the cow screen where you can control the cow with the arrow keys.
+
+4/3
+Moo has made a decent amount of progress. The cow can move around the whole screen and moo. There is background music. The cow can moo, though it is super weird sounding. I need to fix that. Next, I will implement tiles.
