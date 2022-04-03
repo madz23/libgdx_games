@@ -23,4 +23,9 @@ All the sounds come from https://freesound.org.
 * jump2.wav by LloydEvans09
 * Little, happy tune - 22.10.2015 by cabled_mess
 * Break Loop | tictac9 by tictac9
-* Frog.ogg by egomassive 
+* Frog.ogg by egomassive
+
+# moo
+
+4/2
+This is the only "game" worthy of note and the only project here that will likely evolve into a more developed and likely playable game. The animation for the cow was all done by me, but the libGDX skin and sounds are currently being pulled from free websites. More information to come as I actually work on this. As of now, the there is a main menu screen with a play button which takes you to the cow screen where you can control the cow with the arrow keys.
