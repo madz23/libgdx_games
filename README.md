@@ -32,3 +32,6 @@ This is the only "game" worthy of note and the only project here that will likel
 
 4/3
 Moo has made a decent amount of progress. The cow can move around the whole screen and moo. There is background music. The cow can moo, though it is super weird sounding. I need to fix that. Next, I will implement tiles.
+
+4/25
+I found some time to work on this project last week. There is a full tile map that the cow can walk on. It extends beyond the view of the screen, and the camera can follow the cow wherever she walks on the map. The screen is 100x100, and the map is 800x800. I need to make it so that the screen can be resized. The cow has an eat animation and can only eat when standing on a grassy tile. Eating fills the cow's tummies (hearts basically). 
