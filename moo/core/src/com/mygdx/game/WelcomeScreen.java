@@ -72,7 +72,7 @@ public class WelcomeScreen implements Screen {
 
             game.moo.play();
 
-            game.setScreen(new Field(game));
+            game.setScreen(new Field(game, "tiles/less_basic_field.tmx"));
             dispose();
         }
 

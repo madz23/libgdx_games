@@ -35,3 +35,8 @@ Moo has made a decent amount of progress. The cow can move around the whole scre
 
 4/25
 I found some time to work on this project last week. There is a full tile map that the cow can walk on. It extends beyond the view of the screen, and the camera can follow the cow wherever she walks on the map. The screen is 100x100, and the map is 800x800. I need to make it so that the screen can be resized. The cow has an eat animation and can only eat when standing on a grassy tile. Eating fills the cow's tummies (hearts basically). 
+
+# Streak
+
+9/2
+I might use this for my HCI project. It is one of those memory games where you repeat the sequence back to the computer as the sequence slowly gets longer. 

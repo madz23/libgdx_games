@@ -7,15 +7,12 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Animation;
-import com.badlogic.gdx.maps.MapLayer;
+import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 public class Field implements Screen {
@@ -33,27 +30,42 @@ public class Field implements Screen {
     private TiledMap tiledMap;
     private TiledMapRenderer tiledMapRenderer;
 
-    private int width;
-    private int height;
+    private int cameraWidth;
+    private int cameraHeight;
+    private int mapWidth;
+    private int mapHeight;
+    private int tileWidth;
+    private int tileHeight;
 
-    public Field(final CowGame game){
+    public Field(final CowGame game, String fileName){
         this.game = game;
 
-        width = Gdx.graphics.getWidth();
-        height = Gdx.graphics.getHeight();
+        cameraWidth = Gdx.graphics.getWidth();
+        cameraHeight = Gdx.graphics.getHeight();
 
         camera = new OrthographicCamera();
-        camera.setToOrtho(false, width, height);
+        camera.setToOrtho(false, cameraWidth, cameraHeight);
         camera.update();
 
-        tiledMap = new TmxMapLoader().load("tiles/less_basic_field.tmx");
+        tiledMap = new TmxMapLoader().load(fileName);
         tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap);
+
+        MapProperties properties = tiledMap.getProperties();
+
+        mapWidth = properties.get("width", Integer.class);
+        mapHeight = properties.get("height", Integer.class);
+        tileWidth = properties.get("tilewidth", Integer.class);
+        tileHeight = properties.get("tileheight", Integer.class);
+
 
         TiledMapTileLayer mainLayer = (TiledMapTileLayer) tiledMap.getLayers().get(0);
 
         cow = new Cow(game, COW_HEIGHT, COW_WIDTH, mainLayer.getHeight() * mainLayer.getTileWidth(),
                 mainLayer.getHeight() * mainLayer.getTileHeight());
 
+        System.out.println(cameraHeight);
+        System.out.println(cameraWidth);
+        System.out.println(mapHeight );
     }
 
     @Override
@@ -112,9 +124,9 @@ public class Field implements Screen {
     private void cameraBoundary() {
 
         float left_lim = 0 + (camera.viewportHeight * .5f);
-        float right_lim = 3200 - (camera.viewportHeight * .5f);
+        float right_lim = mapWidth * tileWidth - (camera.viewportHeight * .5f);
         float bottom_lim = 0 + (camera.viewportHeight * .5f);
-        float top_lim = 3200 - (camera.viewportHeight * .5f);
+        float top_lim = mapHeight * tileHeight - (camera.viewportHeight * .5f);
 
         if (camera.position.y > top_lim) { camera.position.set(camera.position.x, top_lim, 0); }
         if (camera.position.y < bottom_lim) { camera.position.set(camera.position.x, bottom_lim, 0); }
