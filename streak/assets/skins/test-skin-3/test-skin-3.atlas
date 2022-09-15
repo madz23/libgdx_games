@@ -1,0 +1,111 @@
+
+test-skin-3.png
+size: 512, 512
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+blue-dark
+  rotate: false
+  xy: 1, 35
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+blue-light
+  rotate: false
+  xy: 128, 167
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+blue-normal
+  rotate: false
+  xy: 256, 324
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+navy-dark
+  rotate: false
+  xy: 352, 422
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+navy-light
+  rotate: false
+  xy: 1, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+navy-normal
+  rotate: false
+  xy: 35, 35
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+orange-dark
+  rotate: false
+  xy: 128, 133
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+orange-light
+  rotate: false
+  xy: 162, 167
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+orange-normal
+  rotate: false
+  xy: 256, 290
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+pink-dark
+  rotate: false
+  xy: 290, 324
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+pink-light
+  rotate: false
+  xy: 352, 388
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+pink-normal
+  rotate: false
+  xy: 386, 422
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+font-export
+  rotate: false
+  xy: 256, 358
+  size: 94, 96
+  orig: 94, 96
+  offset: 0, 0
+  index: -1
+sub-title-font-export
+  rotate: false
+  xy: 1, 69
+  size: 125, 130
+  orig: 125, 130
+  offset: 0, 0
+  index: -1
+title-font-export
+  rotate: false
+  xy: 1, 201
+  size: 253, 253
+  orig: 253, 253
+  offset: 0, 0
+  index: -1

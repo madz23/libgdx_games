@@ -3,14 +3,19 @@ package streak.game;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class Streak extends Game {
+/**
+ * @author: madz
+ * This is the main class that will actually be run
+ */
+
+public class Simon extends Game {
 	private SpriteBatch batch;
 
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 
-		this.setScreen(new GameScreen("skins/test-skin-1/streak-skin-1.json"));
+		this.setScreen(new GameScreen("skins/test-skin-3/test-skin-3.json", "sounds/guitar"));
 	}
 
 	@Override

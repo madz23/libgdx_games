@@ -3,7 +3,7 @@ package streak.game.client;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
-import streak.game.Streak;
+import streak.game.Simon;
 
 public class HtmlLauncher extends GwtApplication {
 
@@ -17,6 +17,6 @@ public class HtmlLauncher extends GwtApplication {
 
         @Override
         public ApplicationListener createApplicationListener () {
-                return new Streak();
+                return new Simon();
         }
 }

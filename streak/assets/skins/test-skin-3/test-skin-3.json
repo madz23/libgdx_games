@@ -1,0 +1,88 @@
+{
+BitmapFont: {
+	font-export: {
+		file: font-export.fnt
+	}
+	sub-title-font-export: {
+		file: sub-title-font-export.fnt
+	}
+	title-font-export: {
+		file: title-font-export.fnt
+	}
+}
+Color: {
+	RGBA_241_228_228_255: {
+		hex: f1e4e4ff
+	}
+}
+ButtonStyle: {
+	default: {
+		up: blue-normal
+		down: blue-light
+		over: blue-dark
+	}
+	button-1: {
+		up: orange-normal
+		down: orange-light
+		over: orange-dark
+	}
+	button-2: {
+		up: navy-normal
+		down: navy-light
+		over: navy-dark
+	}
+	button-3: {
+		up: blue-normal
+		down: blue-light
+		over: blue-dark
+	}
+	button-4: {
+		up: pink-normal
+		down: pink-light
+		over: pink-dark
+	}
+	button-1-pressed: {
+		up: orange-light
+		down: orange-light
+		over: orange-light
+	}
+	button-2-pressed: {
+		up: navy-light
+		down: navy-light
+		over: navy-light
+	}
+	button-3-pressed: {
+		up: blue-light
+		down: blue-light
+		over: blue-light
+	}
+	button-4-pressed: {
+		up: pink-light
+		down: pink-light
+		over: pink-light
+	}
+}
+LabelStyle: {
+	default: {
+		font: font-export
+		fontColor: RGBA_241_228_228_255
+	}
+	title-white: {
+		font: title-font-export
+		fontColor: RGBA_241_228_228_255
+	}
+	sub-title-white: {
+		font: sub-title-font-export
+		fontColor: RGBA_241_228_228_255
+	}
+	normal-white: {
+		font: font-export
+		fontColor: RGBA_241_228_228_255
+	}
+}
+TextTooltipStyle: {
+	default: {
+		label: default
+	}
+}
+}

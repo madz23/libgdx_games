@@ -38,5 +38,20 @@ I found some time to work on this project last week. There is a full tile map th
 
 # Streak
 
+For Deployment help, see: https://libgdx.com/wiki/deployment/deploying-your-application.
+
+As I think I want to put this in a web page, run the following commands to deploy to HTML:
+
+in html folder: ./gradlew html:dis
+
+then in html/build/dist
+
+python3 -m httpserver 8080
+
 9/2
-I might use this for my HCI project. It is one of those memory games where you repeat the sequence back to the computer as the sequence slowly gets longer. 
+I might use this for my HCI project. It is one of those memory games where you repeat the sequence back to the computer as the sequence slowly gets longer.
+
+9/15 
+I have decided to use this as my HCI project. It is an implementation of the Simon game like this one: https://freesimon.org/. 
+
+As of right now, the application is only 4 buttons that play sounds when you press them. I am working on the gameplay logic, but the aesthetics might be the most difficult part of this project as I want to make them easily replaced. I want to test the application with different skins, colors, sounds, button layouts, and perhaps number of buttons.  
